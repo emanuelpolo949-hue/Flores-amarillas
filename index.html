@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Para mi mejor amiga</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111; /* fondo oscuro */
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+      text-shadow: 0 0 15px #ffec85;
+    }
+
+    .fall {
+      position: absolute;
+      top: -50px;
+      font-size: 2rem;
+      animation: fall linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Para mi mejor amiga</h1>
+
+  <script>
+    const symbols = ["🌼"]; // solo flores amarillas
+    const total = 50; // cantidad de flores cayendo
+
+    for (let i = 0; i < total; i++) {
+      const span = document.createElement("span");
+      span.className = "fall";
+      span.textContent = symbols[0];
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.animationDuration = 4 + Math.random() * 6 + "s";
+      span.style.fontSize = (20 + Math.random() * 30) + "px";
+      document.body.appendChild(span);
+    }
+  </script>
+</body>
+</html>
